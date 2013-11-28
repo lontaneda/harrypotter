@@ -14,8 +14,9 @@ namespace HarryPotter.Domain
         { 
         }
         
-        public OrderItem(Book book)
+        public OrderItem(int aQuantity, Book book)
         {
+			this.Quantity = aQuantity;
             this.Book = book;
         }
     }

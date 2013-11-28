@@ -13,10 +13,10 @@ namespace HarryPotter.Domain.Tests
         private OrderItem _orderItem;
 
         [Test]
-        public void New_CreateInstanceWith2Books_Create2Items()
+        public void New_CreateInstanceWith1Book_Create1Item()
         {
             Book book = new Book() { Id = 2 };
-            this._orderItem = new OrderItem(book);
+            this._orderItem = new OrderItem(1, book);
             Assert.AreEqual(book, this._orderItem.Book);
         }
     }

@@ -31,7 +31,5 @@ namespace HarryPotter.StoreApp
         {
             this.Item.Quantity = (int)quantityTextBox.Value;
         }
-
-
     }
 }

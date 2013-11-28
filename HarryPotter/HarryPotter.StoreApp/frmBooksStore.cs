@@ -25,7 +25,7 @@ namespace HarryPotter.StoreApp
 
         private void frmBooksStore_Load(object sender, EventArgs e)
         {
-            IList<Book> allBooks =this._bookService.GetAll();
+            IList<Book> allBooks = this._bookService.GetAll();
             this._order = new Order(allBooks);
             foreach (OrderItem item in this._order.Items)
             {
