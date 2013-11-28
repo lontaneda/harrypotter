@@ -23,13 +23,13 @@ namespace HarryPotter.Data
             string cnn = ConfigurationManager.ConnectionStrings["storedb_development"].ConnectionString;
             ISessionFactory factory = Fluently.Configure()
                 .Database(
-                    MySQLConfiguration.Standard
-                        .ConnectionString(cnn)
+                    MsSqlConfiguration.MsSql2008.ConnectionString(cnn)
                 )
                 .Cache(c => c.ProviderClass<NHibernate.Cache.NoCacheProvider>().UseQueryCache())
                 .Mappings(m =>
                 {
                     m.FluentMappings.AddFromAssemblyOf<AuthorsMapper>();
+                    m.FluentMappings.AddFromAssemblyOf<BooksMapper>();
                 })
                 .BuildSessionFactory();
             NHibernate.ISession session = factory.OpenSession();
